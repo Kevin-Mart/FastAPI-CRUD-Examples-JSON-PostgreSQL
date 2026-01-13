@@ -1,35 +1,55 @@
 # FastAPI CRUD Examples
 
-This repository contains **multiple FastAPI CRUD example projects**, created for learning and practice purposes.  
-Each project demonstrates how to build a RESTful API using FastAPI with different data persistence approaches.
+This repository contains **multiple FastAPI backend example projects**, created for learning and practice purposes.  
+Each project demonstrates a different approach to data handling, from simple JSON-based storage to PostgreSQL and external public API integration.
+
+The goal of this repository is to show the **progressive evolution of a backend application**, starting with basic concepts and moving toward more realistic, production-oriented architectures.
 
 ---
 
 ## 🚀 Projects Included
 
-### 📁 1. FastAPI CRUD with JSON Database
+### 📁 1. FastAPI CRUD with JSON
 
-A simple CRUD API that uses a **JSON file as a mock database**, ideal for beginners and quick prototyping.
+A beginner-friendly CRUD API using a **JSON file as a mock database**.
 
-**Highlights:**
+**Key concepts:**
 
-- No external database required
-- Easy to understand and lightweight
-- Focused on FastAPI fundamentals
+- FastAPI fundamentals
+- CRUD operations
+- File-based persistence
 
 ---
 
 ### 📁 2. FastAPI CRUD with PostgreSQL
 
-A more advanced CRUD API that uses **PostgreSQL as a relational database**, suitable for real-world backend development practices.
+A CRUD API using **PostgreSQL** as a relational database.
 
-**Highlights:**
+**Key concepts:**
 
-- PostgreSQL integration
-- Database-driven CRUD operations
-- Scalable and closer to production-ready architecture
+- Database connections
+- Data modeling
+- Pydantic schemas
+- SQL-based persistence
 
 ---
+
+### 📁 3. FastAPI + Public API Integration (Agify)
+
+A FastAPI project that **consumes a public API** and stores the retrieved data in **PostgreSQL**.
+
+Public API used:
+
+```
+https://api.agify.io/?name={name}
+```
+
+**Key concepts:**
+
+- Consuming external REST APIs
+- Handling third-party API responses
+- Persisting external data into PostgreSQL
+- Real-world backend integration patterns
 
 ## 🛠️ Technologies Used
 
@@ -41,46 +61,6 @@ A more advanced CRUD API that uses **PostgreSQL as a relational database**, suit
 - psycopg / SQL tools (depending on implementation)
 
 ---
-
-## 📂 Repository Structure
-
-```text
-backend/
-├── fastapi-json/                              # FastAPI CRUD using JSON as database
-│   ├── main.py                       # Application entry point
-│   │
-│   ├── lib/
-│   │   └── managedb.py               # JSON database management logic
-│   │
-│   ├── db/
-│   │   └── dbContacts.json           # Mock database (JSON file)
-│   │
-│   └── router/                       # API route handlers
-│       ├── get_contacts.py           # Get all contacts
-│       ├── get_contact.py            # Get a single contact
-│       ├── post_contacts.py          # Create a new contact
-│       ├── put_contacts.py           # Update an existing contact
-│       └── delete_contacts.py        # Delete a contact
-│
-├── FASTAPI-POSTGRES/                 # FastAPI CRUD using PostgreSQL
-│   ├── config/
-│   │   └── __init__.py               # Application configuration and settings
-│   │
-│   ├── model/
-│   │   ├── __init__.py
-│   │   └── user_connection.py        # PostgreSQL connection and database logic
-│   │
-│   ├── schema/
-│   │   ├── __init__.py
-│   │   └── user_schema.py            # Pydantic schemas for data validation
-│   │
-│   ├── main.py                       # FastAPI application entry point (PostgreSQL)
-│   └── fastapi-postgres.sql          # SQL script to create database tables
-│
-├── .gitignore
-├── README.md
-
-```
 
 ## ▶️ How to Run the Project
 
